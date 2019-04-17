@@ -7,13 +7,39 @@ var budgetController = (function () {
 
 var UIController = (function () {
     //some code
+    var DOMstrings = {
+        inputType: '.add__type',
+        inputDescription: '.add__description',
+        inputValue: '.add__value',
+        inputBtn: '.add__btn'
+
+    }
+    
+    return {
+        getInput: function(){
+            return {
+               type: document.querySelector(DOMstrings.inputType).value, // will be inc or exp
+               description: document.querySelector(DOMstrings.inputDescription).value,
+               value: document.querySelector(DOMstrings.inputValue).value
+            }
+    
+        },
+        
+        getDOMstrings: function(){
+            return DOMstrings;
+        }
+    }
 
 })();
 
 
 var Controller = (function(budgetCtrl, UICtrl){
+    var DOM = UICtrl.DOMstrings;
+
     var ctrlAddItem = function () {
         // 1. Get the field input data
+        var input = UICtrl.getInput();
+        console.log(input);
 
         // 2. Add the item to the budget controller
 
@@ -23,7 +49,7 @@ var Controller = (function(budgetCtrl, UICtrl){
 
         // 5. Display the budget on the UI
 
-        console.log('It works.')
+
     }
 
 
