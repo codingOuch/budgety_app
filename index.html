@@ -1,137 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, 
-                                     initial-scale=1.0, 
-                                     maximum-scale=1.0, 
-                                     user-scalable=no">
-        <title>Bootstrap twitter-bootstrap</title>
-     
-        
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <title>Budgety</title>
     </head>
-    
     <body>
-        <h1>Welcome to Bootstrap!</h1>
-        <link href="//fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><style>
-h2 {
-font-family: Lobster, Monospace;
-}
-
-.thick-green-border {
-border-color: green;
-border-width: 10px;
-border-style: solid;
-border-radius: 50%;
-}
-
-</style>
-
-<div class="container-fluid">
-    <div class="row">
-<div class="col-xs-8">
-<h2 class="text-primary text-center">CatPhotoApp</h2>
-</div>
-<div class="col-xs-4">
-<a href="#"><img class="img-responsive thick-green-border" src="/statics/codecamp/images/relaxing-cat.jpg"></a>
-</div>
-</div>
-<img src="/statics/codecamp/images/running-cat.jpg" class="img-responsive">
-<div class="row">
-<div class="col-xs-4">
-<button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
-</div>
-<div class="col-xs-4">
-<button class="btn btn-block btn-info"><i class="fa fa-info-circle"></i> Info</button>
-</div>
-<div class="col-xs-4">
-<button class="btn btn-block btn-danger"><i class="fa fa-trash"></i> Delete</button>
-</div>
-</div>
-<div class="text-left">
-        <p>Things cats <span class="text-danger">love:</span></p>
-        <ul>
-        <li>cat nip</li>
-        <li>laser pointers</li>
-        <li>lasagna</li>
-        </ul>
-        <p>Top 3 things cats hate:</p>
-        <ol>
-        <li>flea treatment</li>
-        <li>thunder</li>
-        <li>other cats</li>
-        </ol>
-</div>
-
-<form action="/submit-cat-photo">
-<div class="row">
-<div class="col-xs-6">
-<label><input type="radio" name="indoor-outdoor"> Indoor</label>
-</div>
-<div class="col-xs-6">
-<label><input type="radio" name="indoor-outdoor"> Outdoor</label>
-</div>
-</div>
-<div class="row">
-<div class="col-xs-4">
-<label><input type="checkbox" name="personality"> Loving</label>
-</div>
-<div class="col-xs-4">
-<label><input type="checkbox" name="personality"> Lazy</label>
-</div>
-<div class="col-xs-4">
-<label><input type="checkbox" name="personality"> Crazy</label>
-</div>
-</div>
-<div class="row">
-    <div class="col-xs-6">
-        <input type="text" class="form-control well" placeholder="cat photo URL" required>
-    </div>
-    <div class="col-xs-6">
-        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>
-    </div>
-</div>
-
-
-</form>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- 新 Bootstrap 核心 CSS 文件 -->
-        <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         
-        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-        <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+        <div class="top">
+            <div class="budget">
+                <div class="budget__title">
+                    Available Budget in <span class="budget__title--month">%Month%</span>:
+                </div>
+                
+                <div class="budget__value">+ 2,345.64</div>
+                
+                <div class="budget__income clearfix">
+                    <div class="budget__income--text">Income</div>
+                    <div class="right">
+                        <div class="budget__income--value">+ 4,300.00</div>
+                        <div class="budget__income--percentage">&nbsp;</div>
+                    </div>
+                </div>
+                
+                <div class="budget__expenses clearfix">
+                    <div class="budget__expenses--text">Expenses</div>
+                    <div class="right clearfix">
+                        <div class="budget__expenses--value">- 1,954.36</div>
+                        <div class="budget__expenses--percentage">45%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>　　
+        
+        
+        <div class="bottom">
+            <div class="add">
+                <div class="add__container">
+                    <select class="add__type">
+                        <option value="inc" selected>+</option>
+                        <option value="exp">-</option>
+                    </select>
+                    <input type="text" class="add__description" placeholder="Add description">
+                    <input type="number" class="add__value" placeholder="Value">
+                    <button class="add__btn"><i class="ion-ios-checkmark-outline"></i></button>
+                </div>
+            </div>
+            
+            <div class="container clearfix">
+                <div class="income">
+                    <h2 class="icome__title">Income</h2>
+                    
+                    <div class="income__list">
+                       
+                        
+                        <div class="item clearfix" id="income-0">
+                            <div class="item__description">Salary</div>
+                            <div class="right clearfix">
+                                <div class="item__value">+ 2,100.00</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="item clearfix" id="income-1">
+                            <div class="item__description">Sold car</div>
+                            <div class="right clearfix">
+                                <div class="item__value">+ 1,500.00</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                                                                       
+                    </div>
+                </div>
+                
+                
+                
+                <div class="expenses">
+                    <h2 class="expenses__title">Expenses</h2>
+                    
+                    <div class="expenses__list">
+                       
+                        
+                        <div class="item clearfix" id="expense-0">
+                            <div class="item__description">Apartment rent</div>
+                            <div class="right clearfix">
+                                <div class="item__value">- 900.00</div>
+                                <div class="item__percentage">21%</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item clearfix" id="expense-1">
+                            <div class="item__description">Grocery shopping</div>
+                            <div class="right clearfix">
+                                <div class="item__value">- 435.28</div>
+                                <div class="item__percentage">10%</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        <script src="app.js"></script>
     </body>
-
-
-
-
-
 </html>
-
-
